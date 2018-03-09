@@ -1,5 +1,5 @@
 # openthinclient-suite inside Docker
-FROM univention/ucs-appbox-amd64:4.1-0
+FROM univention/ucs-appbox-amd64:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | tee -a /etc/apt/sources.list && \
