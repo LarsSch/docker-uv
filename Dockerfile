@@ -2,12 +2,7 @@
 FROM univention/ucs-appbox-amd64:latest
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
-    apt-get update && apt-get install -y \    
-    oracle-java8-installer \
-    oracle-java8-set-default \
-    libxrender1 \
-    libxtst6
+RUN apt-get update && apt-get dist-upgrade -y
 
 ADD http://downloads.sourceforge.net/project/openthinclient/installer/openthinclient-2.1-Pales.jar?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fopenthinclient%2F&ts=1450570667&use_mirror=skylink /tmp/data/
 ADD https://raw.githubusercontent.com/openthinclient/docker-uv/develop/data/openthinclient-installer.sh /tmp/data/
